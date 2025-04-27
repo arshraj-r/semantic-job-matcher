@@ -59,11 +59,6 @@ This will output a ranked list of job titles with their similarity scores.
 
 ---
 
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first.
-
----
 
 ## 📄 License
 
@@ -73,5 +68,5 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ## 👨‍💻 Author
 
-Built with ❤️ by [Your Name].
+Built with ❤️ by Arshraj Randhawa.
 
