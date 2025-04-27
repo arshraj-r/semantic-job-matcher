@@ -4,7 +4,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import torch 
 # Check if CUDA is available
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(f"Using device: {device}")
