@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-from resume_parser import extract_text_from_resume  # Your existing CV parser
-from linkedin_scraper import scrape_jobs_for_keywords  # Your existing job scraping function
+from resume_parser import extract_text_from_resume  
+from linkedin_scraper import scrape_jobs_for_keywords  
 
 st.set_page_config(page_title="Semantic Job Matcher", layout="wide")
 st.title("🔍 Semantic Job Matcher")

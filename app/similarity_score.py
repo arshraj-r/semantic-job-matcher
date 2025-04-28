@@ -40,3 +40,32 @@ def similarity_score_calculator(cv_text, jd_text,heatmap_path=None,model=model):
     final_score = (mean_best_jd + mean_best_cv) / 2
 
     return mean_all,mean_best_jd,mean_best_cv,final_score
+
+
+#below are old codes
+
+def combine_resume_fields(info_dict):
+    fields = ['summary', 'experience', 'projects','skills']
+    combined = []
+    for field in fields:
+        if field in info_dict and info_dict[field]:
+            content = info_dict[field]
+            if isinstance(content, list):
+                combined.append(" ".join(content))
+            else:
+                combined.append(str(content))
+    return " ".join(combined)
+
+
+def score_all_jobs(cv_info: dict, jobs_df, model_name="all-MiniLM-L6-v2"):
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"⚙️ Using device: {device}")
+    model = SentenceTransformer(model_name, device=device)
+    resume_text = combine_resume_fields(cv_info)
+    resume_embedding = model.encode(resume_text, convert_to_tensor=True, device=device)
+    job_embeddings = model.encode(jobs_df["description"].tolist(), convert_to_tensor=True, device=device)
+    similarity_scores = util.pytorch_cos_sim(resume_embedding, job_embeddings)[0]
+    jobs_df = jobs_df.copy()
+    jobs_df["similarity_score"] = [round(score.item(), 4) for score in similarity_scores]
+
+    return jobs_df
