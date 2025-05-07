@@ -1,0 +1,49 @@
+Category,Keyword
+Tools & Platforms,Python
+Tools & Platforms,SQL
+Tools & Platforms,Docker
+Tools & Platforms,Kubernetes
+Tools & Platforms,Kubeflow
+Tools & Platforms,Git
+Tools & Platforms,GitHub
+Tools & Platforms,Streamlit
+Tools & Platforms,FastAPI
+Tools & Platforms,CI/CD pipelines
+Tools & Platforms,Vertex AI
+ML & DL Frameworks,TensorFlow
+ML & DL Frameworks,PyTorch
+ML & DL Frameworks,Scikit-learn
+ML & DL Frameworks,Prophet
+ML & DL Frameworks,HuggingFace
+NLP & Generative AI,Generative AI
+NLP & Generative AI,Large Language Models (LLMs)
+NLP & Generative AI,LLM fine-tuning
+NLP & Generative AI,Prompt engineering
+NLP & Generative AI,Chain of Thought (CoT)
+NLP & Generative AI,ReAct
+NLP & Generative AI,Zero-shot learning
+NLP & Generative AI,Few-shot learning
+NLP & Generative AI,Text classification
+NLP & Generative AI,Sentiment analysis
+NLP & Generative AI,Named Entity Recognition (NER)
+NLP & Generative AI,Topic modeling
+NLP & Generative AI,Text summarization
+NLP & Generative AI,Language translation
+NLP & Generative AI,Hate speech detection
+NLP Libraries & Techniques,PEFT (Parameter-Efficient Fine-Tuning)
+NLP Libraries & Techniques,LoRA (Low-Rank Adaptation)
+NLP Libraries & Techniques,SBERT (Sentence-BERT)
+NLP Libraries & Techniques,Spacy
+NLP Libraries & Techniques,NLTK
+NLP Libraries & Techniques,Gensim
+NLP Libraries & Techniques,Regex
+NLP Libraries & Techniques,BERTopic
+NLP Libraries & Techniques,LDA (Latent Dirichlet Allocation)
+RAG & Vector Databases,Retrieval-Augmented Generation (RAG)
+RAG & Vector Databases,LangChain
+RAG & Vector Databases,Quadrant
+RAG & Vector Databases,FAISS
+RAG & Vector Databases,OpenAI embeddings
+RAG & Vector Databases,Vector search
+Data Science & MLOps,Vertex AI
+Data Science & MLOps,Google Cloud Platform (GCP)

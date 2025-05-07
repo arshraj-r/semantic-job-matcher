@@ -185,6 +185,34 @@ def scrape_linkedin_jobs__archive(job_keywords, location="Bengaluru", num_jobs_p
     driver.quit()
     return all_jobs
 
+def extract_and_save_jds(df, output_file='daily_jobs/linkedin_jobs_with_jd.csv'):
+    jd_results = []
+    print(f"total urls:{df.shape[0]}")
+    for i, row in df.iterrows():
+        print(f"extracting jd for job :{i+1}")
+        try:
+            url = row['link']
+            title = row.get('title', None)
+            jd = scrape_jd_from_url(url)
+            jd_results.append({'job_title': title, 'url': url, 'jd': jd})
+        except:
+            print(f"error while extracting jd form url" )
+
+        # Save every 10 entries
+        if (i + 1) % 10 == 0 or (i + 1) == len(df):
+            try:
+                temp_df = pd.DataFrame(jd_results)
+                temp_df.to_csv(output_file, index=False)
+                
+                # with open(output_file, 'w') as f:
+                    # json.dump(jd_results, f, indent=2)
+                print(f"Saved {i+1} results to {output_file}")
+            except Exception as e:
+                print(f"Error saving to file: {e}")
+
+        # Optional: add a short sleep to reduce risk of IP bans
+        time.sleep(0.5)
+    return pd.DataFrame(jd_results)
 
 def scrape_linkedin_jobs_archive(job_keywords, location="India", num_jobs_per_keyword=5):
     options = webdriver.ChromeOptions()
